@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Type of Value ในยุค AI · social capture</title>
+<style>
+:root{
+  --bg:#f7f9fc;
+  --paper:#fff;
+  --navy:#172033;
+  --ink:#172033;
+  --muted:#7d8ca0;
+  --faint:#9aa8ba;
+  --line:#dfe7f2;
+  --row:#fbfdff;
+  --accent:#3b82f6;
+  --accent-soft:#eef4fd;
+  --accent-label:#1e40af;
+  --rank:#2f3a4a;
+  --preview-scale:1;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg)}
+body{
+  color:var(--ink);
+  font-family:"Sukhumvit Set","Thonburi","Noto Sans Thai Looped","Noto Sans Thai",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.profile-link{
+  color:inherit;
+  text-decoration:none;
+}
+.stage{
+  width:100vw;
+  height:100vh;
+  overflow:auto;
+  display:grid;
+  place-items:start center;
+  padding:32px;
+}
+.canvas-wrap{
+  position:relative;
+  width:2560px;
+  height:1600px;
+}
+.canvas{
+  position:relative;
+  width:2560px;
+  height:1600px;
+  overflow:hidden;
+  background:var(--paper);
+  border:1px solid var(--line);
+  box-shadow:0 22px 80px rgba(23,32,51,.14);
+  transform:scale(var(--preview-scale));
+  transform-origin:top left;
+}
+.canvas::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border:32px solid #edf3f9;
+  pointer-events:none;
+}
+.inner{
+  position:absolute;
+  inset:32px;
+  display:grid;
+  grid-template-rows:auto 1fr auto;
+  padding:58px 142px 54px;
+}
+.topline{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:72px;
+  margin-bottom:24px;
+}
+.kicker{
+  margin:0 0 10px;
+  color:var(--accent);
+  font-size:22px;
+  line-height:1.2;
+  font-weight:820;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+h1{
+  margin:0;
+  color:var(--navy);
+  font-size:58px;
+  line-height:1.05;
+  font-weight:840;
+  letter-spacing:0;
+}
+.signature{
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  min-width:260px;
+  border:2px solid var(--line);
+  border-radius:8px;
+  padding:17px 22px;
+  background:#f3f7fb;
+}
+.signature small{
+  display:block;
+  color:var(--faint);
+  font-size:16px;
+  font-weight:850;
+  letter-spacing:.12em;
+  line-height:1.2;
+  text-transform:uppercase;
+}
+.signature strong{
+  display:block;
+  margin-top:6px;
+  color:var(--navy);
+  font-size:24px;
+  line-height:1.18;
+}
+.table-frame{
+  min-height:0;
+  border:2px solid var(--line);
+  border-radius:8px;
+  overflow:hidden;
+  background:var(--paper);
+}
+table{
+  width:100%;
+  height:100%;
+  border-collapse:collapse;
+  table-layout:fixed;
+}
+thead th{
+  background:#f3f7fb;
+  color:#5f6f83;
+  padding:16px 20px;
+  text-align:left;
+  font-size:22px;
+  line-height:1.18;
+  font-weight:850;
+  letter-spacing:.055em;
+  text-transform:uppercase;
+}
+tbody td{
+  border-top:2px solid var(--line);
+  padding:14px 20px;
+  vertical-align:top;
+  font-size:23px;
+  line-height:1.32;
+}
+tbody tr:nth-child(even){background:var(--row)}
+.rank{width:92px;color:var(--rank);font-size:33px;font-weight:820;line-height:1}
+.value{width:340px;color:var(--navy);font-weight:820;box-shadow:none}
+.weight{width:220px}
+.weight span{
+  display:inline-block;
+  border-radius:7px;
+  padding:7px 13px;
+  background:var(--accent-soft);
+  color:var(--accent-label);
+  font-size:21px;
+  line-height:1.08;
+  font-weight:840;
+  white-space:nowrap;
+}
+.logic{width:830px}
+.lower{color:var(--muted)}
+.bottom{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:54px;
+  margin-top:18px;
+}
+.caption{
+  max-width:1460px;
+  color:var(--muted);
+  font-size:22px;
+  line-height:1.35;
+  font-weight:580;
+}
+.caption b{color:var(--navy);font-weight:760}
+.source{
+  flex:0 0 auto;
+  color:var(--faint);
+  font-size:19px;
+  line-height:1.35;
+  text-align:right;
+}
+.source strong{
+  display:block;
+  margin-bottom:6px;
+  color:var(--navy);
+  font-size:22px;
+  line-height:1.15;
+}
+.guide{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:20;
+  min-width:260px;
+  padding:12px 14px;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:8px;
+  background:rgba(16,24,39,.88);
+  color:#fff;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:12px;
+  line-height:1.45;
+  box-shadow:0 10px 28px rgba(0,0,0,.22);
+}
+.guide b{font-weight:800;color:#dcebf0}
+.guide .muted{color:#b9c5d3}
+body.guide-hidden .guide{display:none}
+body:not(.guide-visible) .guide{display:none}
+body.export-mode{
+  width:2560px;
+  height:1600px;
+  overflow:hidden;
+  background:var(--paper);
+}
+body.export-mode .stage{
+  width:2560px;
+  height:1600px;
+  padding:0;
+  overflow:visible;
+  display:block;
+  background:var(--paper);
+}
+body.export-mode .canvas-wrap{
+  width:2560px!important;
+  height:1600px!important;
+}
+body.export-mode .canvas{
+  border:0;
+  box-shadow:none;
+  transform:none!important;
+}
+body.export-mode .guide{display:none}
+@media print{
+  .stage{display:block;width:auto;height:auto;padding:0;overflow:visible}
+  .canvas-wrap{transform:none!important}
+  .guide{display:none}
+}
+</style>
+</head>
+<body>
+  <div class="stage" id="stage">
+    <div class="canvas-wrap" id="canvasWrap">
+      <main class="canvas" aria-label="16:10 social capture canvas">
+        <div class="inner">
+          <section class="topline">
+            <div>
+              <p class="kicker">Business Model Generation / Value Proposition types</p>
+              <h1>Type of Value ในยุค AI</h1>
+            </div>
+            <div class="signature" aria-label="Author signature">
+              <div>
+                <small>thinking note</small>
+                <strong><a class="profile-link" href="https://www.linkedin.com/in/kittisak-khunwanich-a692344/">ti.kittisak</a></strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="table-frame" aria-label="Value proposition weight table">
+            <table>
+              <thead>
+                <tr>
+                  <th class="rank">Rank</th>
+                  <th class="value">Type of Value</th>
+                  <th class="weight">Weight</th>
+                  <th class="logic">Business Logic</th>
+                  <th class="lower">Lower-gain businesses</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="rank">1</td><td class="value">Getting the Job Done</td><td class="weight"><span>Very High</span></td><td class="logic">ลูกค้าไม่ได้ต้องการเครื่องมือเพิ่ม แต่ต้องการให้งานเสร็จจริง ลดขั้นตอน ลดแรง ลดเวลาตัดสินใจ</td><td class="lower">AI tool ที่ช่วยบางขั้น แต่ไม่จบงาน</td></tr>
+                <tr><td class="rank">2</td><td class="value">Convenience / Usability</td><td class="weight"><span>Very High</span></td><td class="logic">เมื่อ AI เยอะขึ้น ปัญหาไม่ใช่ไม่มีเครื่องมือ แต่คือมีเครื่องมือมากเกินไป ธุรกิจที่ทำให้ใช้ง่ายจึงมีมูลค่า</td><td class="lower">Platform ที่มี feature เยอะ แต่ให้ลูกค้าจัด workflow เอง</td></tr>
+                <tr><td class="rank">3</td><td class="value">Cost Reduction</td><td class="weight"><span>Very High</span></td><td class="logic">AI มีความหมายเมื่อกระทบ cost structure ของงานจริง ไม่ใช่แค่ทำ demo ได้เร็ว</td><td class="lower">Productivity tool ที่ประหยัดเวลาเล็กน้อย แต่ไม่ลดต้นทุนระบบ</td></tr>
+                <tr><td class="rank">4</td><td class="value">Risk Reduction</td><td class="weight"><span>High</span></td><td class="logic">ยิ่ง AI เข้าไปในงานจริง ความถูกต้อง compliance auditability และ accountability ยิ่งมีมูลค่า</td><td class="lower">AI ที่ตอบเร็ว แต่ตรวจสอบไม่ได้</td></tr>
+                <tr><td class="rank">5</td><td class="value">Performance</td><td class="weight"><span>High</span></td><td class="logic">ความเร็ว คุณภาพ ความแม่นยำยังสำคัญ แต่ benchmark สูงขึ้นตลอด และถูกเทียบง่ายขึ้น</td><td class="lower">AI ที่ดีขึ้นเล็กน้อย แต่ไม่กระทบ KPI ลูกค้า</td></tr>
+                <tr><td class="rank">6</td><td class="value">Customization</td><td class="weight"><span>Medium-High</span></td><td class="logic">Personalization ยังมีมูลค่า แต่ personalization พื้นฐานเริ่มกลายเป็นสิ่งที่ลูกค้าคาดหวัง</td><td class="lower">AI personalize content / recommendation ทั่วไป</td></tr>
+                <tr><td class="rank">7</td><td class="value">Accessibility</td><td class="weight"><span>Medium-High</span></td><td class="logic">AI ลดกำแพง skill ทำให้คนทำสิ่งที่เคยทำไม่ได้ แต่เมื่อทุกคนเข้าถึงได้ value จะลดเร็ว</td><td class="lower">เครื่องมือที่ขายแค่ว่า “ทำให้คนทั่วไปทำได้”</td></tr>
+                <tr><td class="rank">8</td><td class="value">Design</td><td class="weight"><span>Medium</span></td><td class="logic">UX สำคัญต่อ adoption แต่ลอกเลียนได้เร็ว ถ้าไม่ได้ผูกกับ workflow หรือ switching cost</td><td class="lower">AI app หน้าตาดี แต่ workflow ตื้น</td></tr>
+                <tr><td class="rank">9</td><td class="value">Price</td><td class="weight"><span>Medium-Low</span></td><td class="logic">แข่งราคายากขึ้น เพราะต้นทุน AI ลดลงและคู่แข่งใหม่เกิดง่าย</td><td class="lower">SaaS ที่ไม่มี switching cost</td></tr>
+                <tr><td class="rank">10</td><td class="value">Brand / Status</td><td class="weight"><span>Low-Medium</span></td><td class="logic">ยังสำคัญใน enterprise เพราะเกี่ยวกับ trust แต่ไม่พอถ้า performance และ outcome ไม่ต่าง</td><td class="lower">AI brand ที่ขายภาพลักษณ์มากกว่าผลลัพธ์</td></tr>
+                <tr><td class="rank">11</td><td class="value">Newness</td><td class="weight"><span>Low</span></td><td class="logic">“AI ทำได้” ไม่พอเป็นเหตุผลซื้ออีกแล้ว เพราะความสามารถใหม่กระจายเร็วมาก</td><td class="lower">AI chatbot, AI writing, AI image, AI presentation, prompt marketplace, generic wrapper</td></tr>
+              </tbody>
+            </table>
+          </section>
+
+          <section class="bottom">
+            <div class="caption">
+              <b>Table note:</b> น้ำหนักของ value แต่ละประเภทเปลี่ยนไปเมื่อ AI capability เข้าถึงง่ายขึ้น
+            </div>
+            <div class="source">
+              <strong><a class="profile-link" href="https://www.linkedin.com/in/kittisak-khunwanich-a692344/">ti.kittisak</a></strong>
+              <div>LinkedIn / Kittisak Khunwanich</div>
+              <div>Static social capture · 2560 × 1600</div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <aside class="guide" id="guide" aria-label="Capture guide">
+    <div><b>Capture guide</b></div>
+    <div>Viewport: <span id="viewport">-- × --</span></div>
+    <div>Canvas: 2560 × 1600 px · 16:10</div>
+    <div>Scale: <span id="scale">100%</span></div>
+    <div class="muted">G show/hide guide · F fit screen · 1 actual size</div>
+  </aside>
+
+<script>
+(function(){
+  var stage = document.getElementById("stage");
+  var wrap = document.getElementById("canvasWrap");
+  var viewport = document.getElementById("viewport");
+  var scaleText = document.getElementById("scale");
+  var scaleMode = "fit";
+  var params = new URLSearchParams(window.location.search);
+  var isExport = params.get("export") === "1";
+
+  if(isExport){
+    document.body.classList.add("export-mode", "guide-hidden");
+    scaleMode = "actual";
+  }
+
+  function fitScale(){
+    var pad = 64;
+    return Math.min((window.innerWidth - pad) / 2560, (window.innerHeight - pad) / 1600, 1);
+  }
+
+  function applyScale(){
+    var scale = scaleMode === "fit" ? fitScale() : 1;
+    if(isExport) scale = 1;
+    document.documentElement.style.setProperty("--preview-scale", scale);
+    wrap.style.width = (2560 * scale) + "px";
+    wrap.style.height = (1600 * scale) + "px";
+    if(stage && scaleMode === "fit"){
+      stage.scrollLeft = 0;
+      stage.scrollTop = 0;
+    }
+    viewport.textContent = window.innerWidth + " × " + window.innerHeight;
+    scaleText.textContent = Math.round(scale * 100) + "%";
+  }
+
+  window.addEventListener("resize", applyScale);
+  document.addEventListener("keydown", function(event){
+    var key = event.key.toLowerCase();
+    if(key === "g" || key === "h"){
+      document.body.classList.toggle("guide-visible");
+    }
+    if(key === "f"){
+      scaleMode = "fit";
+      applyScale();
+    }
+    if(key === "1"){
+      scaleMode = "actual";
+      applyScale();
+    }
+  });
+  applyScale();
+})();
+</script>
+</body>
+</html>
