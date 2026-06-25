@@ -71,7 +71,7 @@ a{color:inherit}
 .head-inner{
   max-width:calc(var(--rail) + var(--gap) + var(--article) + 64px);
   margin:0 auto;
-  padding:42px 32px 40px;
+  padding:42px 32px 40px calc(32px + var(--rail) + var(--gap));
 }
 .breadcrumb{
   margin-bottom:24px;
@@ -131,6 +131,7 @@ h1{
 }
 .byline b{color:var(--muted);font-weight:650}
 .media-slot{
+  max-width:var(--measure);
   height:250px;
   margin:0 0 10px;
   border:1px dashed var(--line-2);
@@ -149,6 +150,7 @@ h1{
   text-transform:uppercase;
 }
 .media-caption{
+  max-width:var(--measure);
   margin:10px 0 0;
   color:var(--faint);
   font-size:12.5px;
@@ -369,6 +371,7 @@ h1{
   .sitebar-inner,
   .head-inner,
   .article{padding-left:20px;padding-right:20px}
+  .head-inner{padding-left:20px}
   .sitebar-inner{display:block}
   h1{font-size:34px}
   .subtitle{font-size:17px}
