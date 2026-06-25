@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tikittisak.github.io/ti-kittisak-notes/sitemap.xml
