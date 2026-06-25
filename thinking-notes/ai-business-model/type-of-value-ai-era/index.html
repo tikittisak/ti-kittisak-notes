@@ -253,16 +253,20 @@ h1{
 .source b{color:var(--muted);font-weight:560}
 .rank-list{
   display:grid;
-  gap:10px;
+  gap:0;
 }
 .rank-item{
   display:grid;
   grid-template-columns:56px minmax(0,1fr);
   background:#fff;
   border:1px solid var(--line);
-  border-radius:var(--radius);
+  border-radius:0;
   overflow:hidden;
 }
+.rank-item + .rank-item{margin-top:-1px}
+.rank-item:first-child{border-radius:var(--radius) var(--radius) 0 0}
+.rank-item:last-child{border-radius:0 0 var(--radius) var(--radius)}
+.rank-item:only-child{border-radius:var(--radius)}
 .rank-num{
   padding:18px 10px;
   background:#fbfdff;
