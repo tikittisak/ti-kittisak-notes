@@ -12,24 +12,24 @@
 <title>Type of Value ในยุค AI · ti.kittisak notes</title>
 <style>
 :root{
-  --bg:#ffffff;
-  --soft:#f6f8fc;
-  --soft-2:#eef4ff;
-  --ink:#172033;
-  --text:#273244;
-  --muted:#64748b;
-  --faint:#94a3b8;
-  --line:#dfe7f2;
-  --line-2:#c8d4e3;
-  --blue:#2f5fb8;
-  --blue-deep:#1e3f85;
-  --gold:#c87911;
-  --green:#0f766e;
-  --orange:#b45309;
-  --red:#b42318;
+  --bg:#fbfcfe;
+  --paper:#ffffff;
+  --soft:#f6f8fb;
+  --soft-2:#f3f6fb;
+  --ink:#202a38;
+  --text:#3a4658;
+  --muted:#737f94;
+  --faint:#a7b2c2;
+  --line:#e9eff6;
+  --line-2:#dce5ef;
+  --blue:#3f669f;
+  --blue-deep:#345483;
+  --green:#566f6a;
+  --orange:#70675c;
+  --red:#765f5b;
   --radius:4px;
   --article:760px;
-  --measure:680px;
+  --measure:640px;
   --rail:196px;
   --gap:52px;
   --wrap:1120px;
@@ -42,7 +42,7 @@ body{
   color:var(--text);
   font-family:"Sukhumvit Set","Thonburi","Noto Sans Thai Looped","Noto Sans Thai",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
   font-size:16px;
-  line-height:1.68;
+  line-height:1.62;
   letter-spacing:0;
   -webkit-font-smoothing:antialiased;
 }
@@ -50,7 +50,7 @@ a{color:inherit}
 .profile-link{color:inherit;text-decoration:none}
 .sitebar{
   border-bottom:1px solid var(--line);
-  background:#fff;
+  background:var(--paper);
 }
 .sitebar-inner{
   max-width:var(--wrap);
@@ -93,7 +93,7 @@ a{color:inherit}
   min-height:24px;
   border-radius:3px;
   padding:3px 10px;
-  background:#e9eff9;
+  background:#eef3fb;
   color:var(--blue-deep);
   font-size:11px;
   line-height:1.2;
@@ -110,16 +110,16 @@ h1{
   margin:0;
   max-width:var(--measure);
   color:var(--ink);
-  font-size:40px;
-  line-height:1.12;
-  font-weight:800;
+  font-size:38px;
+  line-height:1.15;
+  font-weight:760;
 }
 .subtitle{
   margin:18px 0 0;
   max-width:var(--measure);
   color:var(--muted);
-  font-size:18.5px;
-  line-height:1.5;
+  font-size:18px;
+  line-height:1.46;
 }
 .byline{
   margin-top:24px;
@@ -137,8 +137,8 @@ h1{
   border:1px dashed var(--line-2);
   border-radius:var(--radius);
   background:
-    linear-gradient(rgba(47,95,184,.05) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(47,95,184,.05) 1px,transparent 1px),
+    linear-gradient(rgba(63,102,159,.028) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(63,102,159,.028) 1px,transparent 1px),
     var(--soft-2);
   background-size:26px 26px;
   display:flex;
@@ -159,7 +159,7 @@ h1{
 .article{
   max-width:calc(var(--rail) + var(--gap) + var(--article) + 64px);
   margin:0 auto;
-  padding:42px 32px 72px;
+  padding:50px 32px 72px;
   display:grid;
   grid-template-columns:var(--rail) minmax(0,var(--article));
   gap:var(--gap);
@@ -172,7 +172,7 @@ h1{
 }
 .toc-title{
   margin:0 0 12px;
-  color:var(--faint);
+  color:var(--muted);
   font-size:11px;
   line-height:1.2;
   font-weight:820;
@@ -183,7 +183,7 @@ h1{
   display:block;
   padding:7px 0 7px 13px;
   border-left:2px solid var(--line);
-  color:var(--muted);
+  color:var(--faint);
   font-size:13.5px;
   line-height:1.35;
   font-weight:620;
@@ -209,26 +209,26 @@ h1{
 }
 .prose{
   max-width:var(--measure);
-  margin-top:34px;
+  margin-top:38px;
 }
 .prose h2{
-  margin:0 0 14px;
+  margin:0 0 16px;
   color:var(--ink);
-  font-size:22px;
-  line-height:1.28;
-  font-weight:760;
+  font-size:21px;
+  line-height:1.32;
+  font-weight:720;
 }
 .prose p{
   margin:0 0 8px;
   color:var(--text);
-  font-size:16.25px;
-  line-height:1.58;
+  font-size:16.5px;
+  line-height:1.55;
   text-wrap:pretty;
 }
 .prose p:last-child{margin-bottom:0}
 .rank-section{
-  margin-top:42px;
-  padding-top:32px;
+  margin-top:46px;
+  padding-top:34px;
   border-top:1px solid var(--line);
 }
 .rank-head{
@@ -241,9 +241,9 @@ h1{
 .rank-head h2{
   margin:0;
   color:var(--ink);
-  font-size:23px;
+  font-size:22px;
   line-height:1.25;
-  font-weight:780;
+  font-weight:740;
 }
 .source{
   max-width:320px;
@@ -260,7 +260,7 @@ h1{
 .rank-item{
   display:grid;
   grid-template-columns:56px minmax(0,1fr);
-  background:#fff;
+  background:var(--paper);
   border:1px solid var(--line);
   border-radius:0;
   overflow:hidden;
@@ -271,16 +271,16 @@ h1{
 .rank-item:only-child{border-radius:var(--radius)}
 .rank-num{
   padding:18px 10px;
-  background:#fbfdff;
-  color:var(--gold);
-  font-size:27px;
+  background:#fbfcfe;
+  color:var(--blue-deep);
+  font-size:25px;
   line-height:1;
-  font-weight:820;
+  font-weight:760;
   text-align:center;
   border-right:1px solid var(--line);
 }
 .rank-body{
-  padding:17px 18px 18px;
+  padding:18px 20px 19px;
 }
 .rank-top{
   display:flex;
@@ -293,7 +293,7 @@ h1{
   color:var(--ink);
   font-size:18px;
   line-height:1.28;
-  font-weight:780;
+  font-weight:740;
 }
 .weight{
   flex:0 0 auto;
@@ -302,36 +302,26 @@ h1{
   min-height:26px;
   border-radius:4px;
   padding:3px 9px;
-  background:#e9eff9;
+  background:#f0f4fa;
   color:var(--blue-deep);
-  font-size:13px;
+  font-size:12.5px;
   line-height:1.15;
-  font-weight:760;
+  font-weight:720;
   white-space:nowrap;
 }
-.weight.high{background:#ecfdf5;color:var(--green)}
-.weight.mid{background:#fffbeb;color:var(--orange)}
-.weight.low{background:#fef3f2;color:var(--red)}
+.weight.high{background:#f1f6f4;color:var(--green)}
+.weight.mid{background:#f5f3ef;color:var(--orange)}
+.weight.low{background:#f6f1f0;color:var(--red)}
 .rank-detail{
   display:grid;
   grid-template-columns:minmax(0,1fr) minmax(210px,.62fr);
   gap:18px;
 }
-.label{
-  display:block;
-  margin-bottom:4px;
-  color:var(--faint);
-  font-size:10px;
-  line-height:1.2;
-  font-weight:780;
-  letter-spacing:.08em;
-  text-transform:uppercase;
-}
 .logic,
 .lower{
   color:var(--text);
   font-size:15.5px;
-  line-height:1.66;
+  line-height:1.58;
 }
 .lower{color:var(--muted)}
 .notes{
@@ -347,11 +337,12 @@ h1{
   color:var(--ink);
   font-size:20px;
   line-height:1.3;
+  font-weight:720;
 }
 .note p{
   margin:0 0 8px;
-  font-size:16.25px;
-  line-height:1.6;
+  font-size:16.5px;
+  line-height:1.56;
   text-wrap:pretty;
 }
 .note p:last-child{margin-bottom:0}
@@ -437,17 +428,17 @@ h1{
       </div>
 
       <div class="rank-list">
-        <article class="rank-item"><div class="rank-num">1</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Getting the Job Done</div><span class="weight">Very High</span></div><div class="rank-detail"><div class="logic"><span class="label">Business logic</span>ลูกค้าไม่ได้ต้องการเครื่องมือเพิ่ม แต่ต้องการให้งานเสร็จจริง ลดขั้นตอน ลดแรง ลดเวลาตัดสินใจ</div><div class="lower"><span class="label">Lower-gain businesses</span>AI tool ที่ช่วยบางขั้น แต่ไม่จบงาน</div></div></div></article>
-        <article class="rank-item"><div class="rank-num">2</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Convenience / Usability</div><span class="weight">Very High</span></div><div class="rank-detail"><div class="logic"><span class="label">Business logic</span>เมื่อ AI เยอะขึ้น ปัญหาไม่ใช่ไม่มีเครื่องมือ แต่คือมีเครื่องมือมากเกินไป ธุรกิจที่ทำให้ใช้ง่ายจึงมีมูลค่า</div><div class="lower"><span class="label">Lower-gain businesses</span>Platform ที่มี feature เยอะ แต่ให้ลูกค้าจัด workflow เอง</div></div></div></article>
-        <article class="rank-item"><div class="rank-num">3</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Cost Reduction</div><span class="weight">Very High</span></div><div class="rank-detail"><div class="logic"><span class="label">Business logic</span>AI มีความหมายเมื่อกระทบ cost structure ของงานจริง ไม่ใช่แค่ทำ demo ได้เร็ว</div><div class="lower"><span class="label">Lower-gain businesses</span>Productivity tool ที่ประหยัดเวลาเล็กน้อย แต่ไม่ลดต้นทุนระบบ</div></div></div></article>
-        <article class="rank-item"><div class="rank-num">4</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Risk Reduction</div><span class="weight high">High</span></div><div class="rank-detail"><div class="logic"><span class="label">Business logic</span>ยิ่ง AI เข้าไปในงานจริง ความถูกต้อง compliance auditability และ accountability ยิ่งมีมูลค่า</div><div class="lower"><span class="label">Lower-gain businesses</span>AI ที่ตอบเร็ว แต่ตรวจสอบไม่ได้</div></div></div></article>
-        <article class="rank-item"><div class="rank-num">5</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Performance</div><span class="weight high">High</span></div><div class="rank-detail"><div class="logic"><span class="label">Business logic</span>ความเร็ว คุณภาพ ความแม่นยำยังสำคัญ แต่ benchmark สูงขึ้นตลอด และถูกเทียบง่ายขึ้น</div><div class="lower"><span class="label">Lower-gain businesses</span>AI ที่ดีขึ้นเล็กน้อย แต่ไม่กระทบ KPI ลูกค้า</div></div></div></article>
-        <article class="rank-item"><div class="rank-num">6</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Customization</div><span class="weight high">Medium-High</span></div><div class="rank-detail"><div class="logic"><span class="label">Business logic</span>Personalization ยังมีมูลค่า แต่ personalization พื้นฐานเริ่มกลายเป็นสิ่งที่ลูกค้าคาดหวัง</div><div class="lower"><span class="label">Lower-gain businesses</span>AI personalize content / recommendation ทั่วไป</div></div></div></article>
-        <article class="rank-item"><div class="rank-num">7</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Accessibility</div><span class="weight high">Medium-High</span></div><div class="rank-detail"><div class="logic"><span class="label">Business logic</span>AI ลดกำแพง skill ทำให้คนทำสิ่งที่เคยทำไม่ได้ แต่เมื่อทุกคนเข้าถึงได้ value จะลดเร็ว</div><div class="lower"><span class="label">Lower-gain businesses</span>เครื่องมือที่ขายแค่ว่า “ทำให้คนทั่วไปทำได้”</div></div></div></article>
-        <article class="rank-item"><div class="rank-num">8</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Design</div><span class="weight mid">Medium</span></div><div class="rank-detail"><div class="logic"><span class="label">Business logic</span>UX สำคัญต่อ adoption แต่ลอกเลียนได้เร็ว ถ้าไม่ได้ผูกกับ workflow หรือ switching cost</div><div class="lower"><span class="label">Lower-gain businesses</span>AI app หน้าตาดี แต่ workflow ตื้น</div></div></div></article>
-        <article class="rank-item"><div class="rank-num">9</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Price</div><span class="weight mid">Medium-Low</span></div><div class="rank-detail"><div class="logic"><span class="label">Business logic</span>แข่งราคายากขึ้น เพราะต้นทุน AI ลดลงและคู่แข่งใหม่เกิดง่าย</div><div class="lower"><span class="label">Lower-gain businesses</span>SaaS ที่ไม่มี switching cost</div></div></div></article>
-        <article class="rank-item"><div class="rank-num">10</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Brand / Status</div><span class="weight mid">Low-Medium</span></div><div class="rank-detail"><div class="logic"><span class="label">Business logic</span>ยังสำคัญใน enterprise เพราะเกี่ยวกับ trust แต่ไม่พอถ้า performance และ outcome ไม่ต่าง</div><div class="lower"><span class="label">Lower-gain businesses</span>AI brand ที่ขายภาพลักษณ์มากกว่าผลลัพธ์</div></div></div></article>
-        <article class="rank-item"><div class="rank-num">11</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Newness</div><span class="weight low">Low</span></div><div class="rank-detail"><div class="logic"><span class="label">Business logic</span>“AI ทำได้” ไม่พอเป็นเหตุผลซื้ออีกแล้ว เพราะความสามารถใหม่กระจายเร็วมาก</div><div class="lower"><span class="label">Lower-gain businesses</span>AI chatbot, AI writing, AI image, AI presentation, prompt marketplace, generic wrapper</div></div></div></article>
+        <article class="rank-item"><div class="rank-num">1</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Getting the Job Done</div><span class="weight">Very High</span></div><div class="rank-detail"><div class="logic">ลูกค้าไม่ได้ต้องการเครื่องมือเพิ่ม แต่ต้องการให้งานเสร็จจริง ลดขั้นตอน ลดแรง ลดเวลาตัดสินใจ</div><div class="lower">ถ้า AI ช่วยได้เพียงบางขั้น แต่ไม่จบงาน ลูกค้ายังต้องแบกรอยต่อของ workflow เอง</div></div></div></article>
+        <article class="rank-item"><div class="rank-num">2</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Convenience / Usability</div><span class="weight">Very High</span></div><div class="rank-detail"><div class="logic">เมื่อ AI เยอะขึ้น ปัญหาไม่ใช่ไม่มีเครื่องมือ แต่คือมีเครื่องมือมากเกินไป ธุรกิจที่ทำให้ใช้ง่ายจึงมีมูลค่า</div><div class="lower">Platform ที่มี feature เยอะ แต่ให้ลูกค้าจัด workflow เอง จะสร้างภาระการใช้งานมากกว่าความง่าย</div></div></div></article>
+        <article class="rank-item"><div class="rank-num">3</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Cost Reduction</div><span class="weight">Very High</span></div><div class="rank-detail"><div class="logic">AI มีความหมายเมื่อกระทบ cost structure ของงานจริง ไม่ใช่แค่ทำ demo ได้เร็ว</div><div class="lower">Productivity tool ที่ประหยัดเวลาเล็กน้อย แต่ไม่ลดต้นทุนระบบ จะวัดผลทางธุรกิจได้ยาก</div></div></div></article>
+        <article class="rank-item"><div class="rank-num">4</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Risk Reduction</div><span class="weight high">High</span></div><div class="rank-detail"><div class="logic">ยิ่ง AI เข้าไปในงานจริง ความถูกต้อง compliance auditability และ accountability ยิ่งมีมูลค่า</div><div class="lower">AI ที่ตอบเร็ว แต่ตรวจสอบไม่ได้ อาจเพิ่มความเสี่ยงทันทีเมื่อถูกใช้ในงานจริง</div></div></div></article>
+        <article class="rank-item"><div class="rank-num">5</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Performance</div><span class="weight high">High</span></div><div class="rank-detail"><div class="logic">ความเร็ว คุณภาพ ความแม่นยำยังสำคัญ แต่ benchmark สูงขึ้นตลอด และถูกเทียบง่ายขึ้น</div><div class="lower">AI ที่ดีขึ้นเล็กน้อย แต่ไม่กระทบ KPI ลูกค้า จะถูกมองเป็น incremental improvement</div></div></div></article>
+        <article class="rank-item"><div class="rank-num">6</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Customization</div><span class="weight high">Medium-High</span></div><div class="rank-detail"><div class="logic">Personalization ยังมีมูลค่า แต่ personalization พื้นฐานเริ่มกลายเป็นสิ่งที่ลูกค้าคาดหวัง</div><div class="lower">AI personalize content หรือ recommendation ทั่วไป จะถูกนับเป็น baseline เร็วขึ้น</div></div></div></article>
+        <article class="rank-item"><div class="rank-num">7</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Accessibility</div><span class="weight high">Medium-High</span></div><div class="rank-detail"><div class="logic">AI ลดกำแพง skill ทำให้คนทำสิ่งที่เคยทำไม่ได้ แต่เมื่อทุกคนเข้าถึงได้ value จะลดเร็ว</div><div class="lower">เครื่องมือที่ขายแค่ว่า “ทำให้คนทั่วไปทำได้” จะเสียความต่างเมื่อคู่แข่งทำได้เหมือนกัน</div></div></div></article>
+        <article class="rank-item"><div class="rank-num">8</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Design</div><span class="weight mid">Medium</span></div><div class="rank-detail"><div class="logic">UX สำคัญต่อ adoption แต่ลอกเลียนได้เร็ว ถ้าไม่ได้ผูกกับ workflow หรือ switching cost</div><div class="lower">AI app หน้าตาดี แต่ workflow ตื้น จะถูกแทนที่ได้ง่ายเมื่อ interface แบบเดียวกันแพร่หลาย</div></div></div></article>
+        <article class="rank-item"><div class="rank-num">9</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Price</div><span class="weight mid">Medium-Low</span></div><div class="rank-detail"><div class="logic">แข่งราคายากขึ้น เพราะต้นทุน AI ลดลงและคู่แข่งใหม่เกิดง่าย</div><div class="lower">SaaS ที่ไม่มี switching cost จะถูกกดราคาเร็ว เพราะลูกค้าย้ายไปทางเลือกใหม่ได้ง่าย</div></div></div></article>
+        <article class="rank-item"><div class="rank-num">10</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Brand / Status</div><span class="weight mid">Low-Medium</span></div><div class="rank-detail"><div class="logic">ยังสำคัญใน enterprise เพราะเกี่ยวกับ trust แต่ไม่พอถ้า performance และ outcome ไม่ต่าง</div><div class="lower">AI brand ที่ขายภาพลักษณ์มากกว่าผลลัพธ์ จะรักษาน้ำหนักได้ยากเมื่อผู้ซื้อเริ่มเทียบ outcome จริง</div></div></div></article>
+        <article class="rank-item"><div class="rank-num">11</div><div class="rank-body"><div class="rank-top"><div class="rank-title">Newness</div><span class="weight low">Low</span></div><div class="rank-detail"><div class="logic">“AI ทำได้” ไม่พอเป็นเหตุผลซื้ออีกแล้ว เพราะความสามารถใหม่กระจายเร็วมาก</div><div class="lower">AI chatbot, AI writing, AI image, AI presentation, prompt marketplace หรือ generic wrapper จะถูกลอกได้เร็ว</div></div></div></article>
       </div>
     </section>
 
