@@ -29,6 +29,7 @@
   --red:#b42318;
   --radius:4px;
   --article:760px;
+  --measure:680px;
   --rail:196px;
   --gap:52px;
   --wrap:1120px;
@@ -107,7 +108,7 @@ a{color:inherit}
 }
 h1{
   margin:0;
-  max-width:var(--article);
+  max-width:var(--measure);
   color:var(--ink);
   font-size:40px;
   line-height:1.12;
@@ -115,10 +116,10 @@ h1{
 }
 .subtitle{
   margin:18px 0 0;
-  max-width:var(--article);
+  max-width:var(--measure);
   color:var(--muted);
   font-size:18.5px;
-  line-height:1.62;
+  line-height:1.5;
 }
 .byline{
   margin-top:24px;
@@ -205,7 +206,7 @@ h1{
   min-width:0;
 }
 .prose{
-  max-width:none;
+  max-width:var(--measure);
   margin-top:34px;
 }
 .prose h2{
@@ -327,7 +328,7 @@ h1{
 }
 .lower{color:var(--muted)}
 .notes{
-  max-width:none;
+  max-width:var(--measure);
   margin-top:42px;
   padding-top:32px;
   border-top:1px solid var(--line);
@@ -347,7 +348,7 @@ h1{
 }
 .note p:last-child{margin-bottom:0}
 .foot{
-  max-width:none;
+  max-width:var(--measure);
   margin-top:40px;
   padding-top:14px;
   border-top:1px solid var(--line);
