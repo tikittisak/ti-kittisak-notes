@@ -232,10 +232,7 @@ h1{
   border-top:1px solid var(--line);
 }
 .rank-head{
-  display:flex;
-  justify-content:space-between;
-  gap:22px;
-  align-items:flex-end;
+  display:block;
   margin-bottom:16px;
 }
 .rank-head h2{
@@ -246,11 +243,13 @@ h1{
   font-weight:740;
 }
 .source{
-  max-width:320px;
+  max-width:none;
+  margin-top:6px;
   color:var(--faint);
   font-size:12.5px;
   line-height:1.4;
-  text-align:right;
+  text-align:left;
+  white-space:nowrap;
 }
 .source b{color:var(--muted);font-weight:560}
 .rank-list{
@@ -270,28 +269,28 @@ h1{
 .rank-item:last-child{border-radius:0 0 var(--radius) var(--radius)}
 .rank-item:only-child{border-radius:var(--radius)}
 .rank-num{
-  padding:18px 10px;
+  padding:16px 10px;
   background:#fbfcfe;
   color:var(--blue-deep);
-  font-size:25px;
+  font-size:13.5px;
   line-height:1;
   font-weight:760;
   text-align:center;
   border-right:1px solid var(--line);
 }
 .rank-body{
-  padding:18px 20px 19px;
+  padding:15px 18px 16px;
 }
 .rank-top{
   display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap:16px;
+  align-items:center;
+  justify-content:flex-start;
+  gap:10px;
   margin-bottom:11px;
 }
 .rank-title{
   color:var(--ink);
-  font-size:18px;
+  font-size:16px;
   line-height:1.28;
   font-weight:740;
 }
@@ -319,11 +318,10 @@ h1{
 }
 .logic,
 .lower{
-  color:var(--text);
-  font-size:15.5px;
-  line-height:1.58;
+  color:var(--blue-deep);
+  font-size:13.5px;
+  line-height:1.5;
 }
-.lower{color:var(--muted)}
 .notes{
   max-width:var(--measure);
   margin-top:42px;
@@ -376,6 +374,10 @@ h1{
   .rank-top{display:block}
   .weight{margin-top:8px}
   .rank-detail{grid-template-columns:1fr}
+  .rank-title{font-size:16px}
+  .rank-num,
+  .logic,
+  .lower{font-size:14.5px}
 }
 </style>
 </head>
