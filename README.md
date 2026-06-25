@@ -21,14 +21,14 @@ Publish only this `public-site/` folder to GitHub Pages.
 5. Select branch `main` and folder `/ (root)`.
 
 ```bash
-git remote add origin https://github.com/<user>/ti-kittisak-notes.git
+git remote add origin https://github.com/tikittisak/ti-kittisak-notes.git
 git push -u origin main
 ```
 
 The published note URL will look like:
 
 ```text
-https://<user>.github.io/ti-kittisak-notes/thinking-notes/ai-business-model/type-of-value-ai-era/
+https://tikittisak.github.io/ti-kittisak-notes/thinking-notes/ai-business-model/type-of-value-ai-era/
 ```
 
 If a custom domain is added later, the target URL can become:
