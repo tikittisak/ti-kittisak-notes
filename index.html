@@ -3,33 +3,165 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="refresh" content="0; url=thinking-notes/ai-business-model/type-of-value-ai-era/">
-<title>ti.career · ti.kittisak</title>
+<title>ti.kittisak notes</title>
 <style>
+:root{
+  --bg:#f7f9fc;
+  --paper:#fff;
+  --ink:#172033;
+  --text:#273244;
+  --muted:#64748b;
+  --faint:#94a3b8;
+  --line:#dfe7f2;
+  --blue:#1e3f85;
+}
+*{box-sizing:border-box}
 body{
   margin:0;
   min-height:100vh;
+  background:var(--bg);
+  color:var(--text);
+  font-family:"Sukhumvit Set","Thonburi","Noto Sans Thai Looped","Noto Sans Thai",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.page{
+  width:min(960px,calc(100vw - 40px));
+  margin:0 auto;
+  padding:72px 0 88px;
+}
+.topline{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:56px;
+  color:var(--faint);
+  font-size:14px;
+  line-height:1.4;
+}
+.topline b{color:var(--muted);font-weight:720}
+h1{
+  margin:0;
+  color:var(--ink);
+  font-size:48px;
+  line-height:1.08;
+  font-weight:820;
+}
+.subtitle{
+  max-width:680px;
+  margin:16px 0 0;
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.65;
+}
+.section{
+  margin-top:52px;
+  padding-top:28px;
+  border-top:1px solid var(--line);
+}
+.section-label{
+  margin:0 0 14px;
+  color:var(--faint);
+  font-size:12px;
+  line-height:1.2;
+  font-weight:820;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+.note-list{
   display:grid;
-  place-items:center;
-  background:#f7f9fc;
-  color:#172033;
-  font-family:"Sukhumvit Set","Thonburi","Noto Sans Thai",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  gap:12px;
 }
-main{
-  width:min(640px,calc(100vw - 40px));
-  padding:32px;
-  border:1px solid #dfe7f2;
-  background:#fff;
+.note{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  gap:18px;
+  align-items:start;
+  padding:20px 22px;
+  border:1px solid var(--line);
+  background:var(--paper);
 }
-p{margin:0 0 12px;line-height:1.6}
-a{color:#1e3f85;font-weight:700}
+.note h2{
+  margin:0 0 8px;
+  color:var(--ink);
+  font-size:23px;
+  line-height:1.25;
+}
+.note p{
+  margin:0;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.6;
+}
+.tag{
+  display:inline-flex;
+  align-items:center;
+  min-height:26px;
+  padding:4px 9px;
+  border-radius:4px;
+  background:#e9eff9;
+  color:var(--blue);
+  font-size:12px;
+  line-height:1.2;
+  font-weight:760;
+  white-space:nowrap;
+}
+.links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px 18px;
+  margin-top:14px;
+  color:var(--blue);
+  font-size:14px;
+  font-weight:720;
+}
+.foot{
+  margin-top:56px;
+  color:var(--faint);
+  font-size:13px;
+  line-height:1.5;
+}
+@media(max-width:640px){
+  .page{padding-top:42px}
+  .topline{display:block}
+  h1{font-size:36px}
+  .note{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
-  <main>
-    <p><strong>ti.career</strong> / ti.kittisak</p>
-    <p>Redirecting to the latest thinking note.</p>
-    <p><a href="thinking-notes/ai-business-model/type-of-value-ai-era/">Open note</a></p>
+  <main class="page">
+    <div class="topline">
+      <span><b>ti.kittisak</b> / notes</span>
+      <a href="https://www.linkedin.com/in/kittisak-khunwanich-a692344/">LinkedIn / Kittisak Khunwanich</a>
+    </div>
+
+    <header>
+      <h1>ti.kittisak notes</h1>
+      <p class="subtitle">Public thinking notes on AI, business models, work systems, and career-facing artifacts.</p>
+    </header>
+
+    <section class="section" aria-label="Thinking notes">
+      <p class="section-label">Thinking Notes</p>
+      <div class="note-list">
+        <article class="note">
+          <div>
+            <h2><a href="thinking-notes/ai-business-model/type-of-value-ai-era/">Type of Value ในยุค AI</a></h2>
+            <p>วิเคราะห์น้ำหนักของ Value Proposition เมื่อ AI ส่งมอบความสามารถให้ธุรกิจได้แบบก้าวกระโดด</p>
+            <div class="links">
+              <a href="thinking-notes/ai-business-model/type-of-value-ai-era/">Read note</a>
+              <a href="thinking-notes/ai-business-model/type-of-value-ai-era/social/fb-linkedin.html">Social table</a>
+            </div>
+          </div>
+          <span class="tag">AI / Business Model</span>
+        </article>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <p>Static public archive. Canonical profile: <a href="https://www.linkedin.com/in/kittisak-khunwanich-a692344/">ti.kittisak on LinkedIn</a>.</p>
+    </footer>
   </main>
 </body>
 </html>
